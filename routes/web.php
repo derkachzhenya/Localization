@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/localization', [LocalizationController::class, 'index'])->name('localization.index');
+
+//Localization Route
+
+Route::get('locale/{lange}', [LocalizationController::class, 'setLang']);
